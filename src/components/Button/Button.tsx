@@ -3,7 +3,7 @@ import { useState } from "react";
 import './Button.css';
 
 type ButtonProps = {
-  text: string,
+  text: string;
 };
 
 function Button({text}: ButtonProps) {
