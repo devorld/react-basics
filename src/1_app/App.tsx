@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import reactLogo from '../7_shared/assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import { Button } from "./components";
-import { Temperature } from "./blocks";
+import { Button } from "../7_shared/ui";
+import { Temperature } from "../4_widgets/Temperature";
+
 
 function App() {
   const [count, setCount] = useState(0)
