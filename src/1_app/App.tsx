@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 import { Button } from "../7_shared/ui";
-import { Temperature } from "../4_widgets/Temperature";
+import { Temperature } from "../4_widgets/temperature";
 
 
 function App() {

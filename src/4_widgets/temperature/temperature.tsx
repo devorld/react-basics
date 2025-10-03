@@ -1,5 +1,6 @@
 import type { RefObject } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useTemperatureStore } from "../../6_entities/temperature/model/store.ts";
 
 // noinspection SpellCheckingInspection
 type MeteoResponse = {
@@ -26,7 +27,8 @@ function Temperature() {
   const queryBuilder = (paramsObj: {
     [key: string]: number | string
   }) => Object.entries(paramsObj).map(([k, v]) => `${k}=${v}`).join('&');
-  const [temperature, setTemperature] = useState(-273);
+  const {temperature, setTemperature} = useTemperatureStore(state => state);
+
 
   useEffect(() => {
     fetch(`https://api.open-meteo.com/v1/forecast?${queryBuilder(queryParamsRef.current)}`)
@@ -35,7 +37,7 @@ function Temperature() {
         setTemperature(data.current.temperature_2m);
         globalThis.console.debug(new Date().toISOString().split(/[TZ]/)[1], data.current.temperature_2m);
       });
-  }, []);
+  }, [setTemperature]);
 
   return (
     <>
