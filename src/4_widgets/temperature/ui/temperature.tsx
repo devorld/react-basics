@@ -1,6 +1,6 @@
 import type { RefObject } from "react";
 import { useEffect, useRef } from "react";
-import { useTemperatureStore } from "../../6_entities/temperature/model/store.ts";
+import { useTemperatureStore } from "../../../6_entities/temperature/model/store.ts";
 
 // noinspection SpellCheckingInspection
 type MeteoResponse = {

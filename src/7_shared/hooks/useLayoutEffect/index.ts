@@ -1,1 +1,1 @@
-export { Temperature } from '../../../4_widgets/temperature';
+export { Temperature } from '../../../4_widgets/temperature/ui';
